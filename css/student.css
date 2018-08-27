@@ -10,7 +10,7 @@ html, body {
   }
 
   .hero {
-    margin-left: 60px;
+    margin-left: 50px;
     background: url("http://www.qygjxz.com/data/out/8/4083205-android-wallpaper-hd.jpeg") no-repeat center;
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.8);
@@ -45,7 +45,7 @@ h3 {
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 8px 16px 32px 0 rgb(0, 0, 0);
 }
 
 .cont {
@@ -199,7 +199,7 @@ a.button.small:hover {
 
 .sidenav {
   height: 100%;
-  width: 60px;
+  width: 50px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -220,3 +220,5 @@ a.button.small:hover {
 .sidenav a:hover {
   color: #f1f1f1;
 }
+
+
