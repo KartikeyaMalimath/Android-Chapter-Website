@@ -109,16 +109,23 @@
                                     while($row =$result2->fetch_assoc()) {  
                                         $del = $row['usn'];
                                         echo "<div class='row'>
-                                        <div class='col-md-5'>
-                                            <h5 style='color:white;'>{$row['uname']}</h5>
-                                        </div>
-                                        <div class = 'col-md-5'>
-                                            <button style='background-color: #22272B; color:white;' type='button' id='".$del."' onClick= 'deluser(this.id)'>Delete</button>
-                                        </div>
-                                        <div class= 'col-md-5>
-                                            <h5 style='color:white;'>{$row['team']}</h5>
-                                        </div>
+                                        <div class='col-md-8'>                                            
+                                            <h5 style='color:white;'>{$row['team']}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$row['uname']}</h5>
                                         </div>";
+                                        if($del  == '4vv16cs046' || $del == '4vv16cs108'){
+                                            echo "
+                                            <div class = 'col-md-4'>
+                                                <button style='background-color: #22272B; color:white;' type='button'>Delete</button>
+                                            </div>";
+                                        }
+                                        else {
+                                            echo "
+                                            <div class = 'col-md-4'>
+                                                <button style='background-color: #22272B; color:white;' type='button' id='".$del."' onClick= 'deluser(this.id)'>Delete</button>
+                                            </div>";
+                                        }
+                                        
+                                        echo "</div>";
                                     }
 
                                 ?></p>
