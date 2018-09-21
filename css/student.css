@@ -53,6 +53,7 @@ h3 {
 }
 
 .section {
+  margin-left: 50px;
   width: 100%;
 display: block;
 overflow: hidden;
@@ -76,6 +77,7 @@ padding: 50px 0;
 }
 
 .hero-down {
+  margin-left: 50px;
   position: absolute;
   bottom: 0;
   font-size: 2em;
@@ -117,6 +119,7 @@ padding: 50px 0;
 }
 
 .footer {
+  margin-left: 50px;
   display: block;
   box-size: border-box;
   -webkit-box-size: border-box;
@@ -221,4 +224,12 @@ a.button.small:hover {
   color: #f1f1f1;
 }
 
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid red;
+}
 

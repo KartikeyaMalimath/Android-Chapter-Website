@@ -38,10 +38,39 @@ $name = $_SESSION['name'];
   
 </head>
 
+
+<style> 
+input[type=text] {
+    width: 100%;
+    padding: 6px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid blue;
+    background-color: rgba(0,0,0,0.2);
+}
+
+input[type=submit] {
+    background-color: #026DAC;
+    color: black;
+    font-size: 18px;
+    border: 2px solid #555555;
+    width: 100%;
+    padding: 8px 0 8px 0  ;
+    
+}
+
+input[type=submit]:hover {
+    background-color: #555555;
+    color: white;
+}
+</style>
+
 <body>
     <section class="hero" name="top"> 
             <div class="sidenav">
-                    <a href="#"><span class="glyphicon glyphicon-home"></span></a>
+                    <a href="student.php"><span class="glyphicon glyphicon-home"></span></a>
+                    <a href="myupdate.php"><span class="glyphicon glyphicon-briefcase"></span></a>
                     <a href="#"><span class="glyphicon glyphicon-user"></span></a>
                     <a href="function/logout.php"><span class="glyphicon glyphicon-arrow-left"></span></a>
                 </div>
@@ -53,6 +82,15 @@ $name = $_SESSION['name'];
         </nav>
 
         <div class="container">
+
+            <!--update notification-->
+            <h3>Notice : Read the instruction before continuing</h3>
+            <p>The website has been updated and is under beta version, This page should be used only while working on projects. Please dont update your 
+                course learning or mocks here. There a briefcase symbol at the left of the desktop. go to that page for updating your learning progress and mocks.
+                Please Abide by the rules your course progress will be monitored strictly. if you have already inserted cards here please delete them and
+                upadte those details in that page. For further doubts please contact admin. Thank you.</p>
+
+            <br>
             <div class="col-sm-3">
                 <div class="panel panel-danger">
                     <div class="panel-heading"><h4>Assigned Work</h4></div>
@@ -98,7 +136,7 @@ $name = $_SESSION['name'];
                                 ?>
                             </select>
                             <input style="width: 100%; color: black; margin-top:5px; margin-bottom:5px;" type="text" name="details" required>  
-                            <input type="submit" name="submit" style="background-color:#026DAC; width: 100%;">
+                            <input type="submit" name="submit">
                             </form> 
                             </div>
                         </div> 
