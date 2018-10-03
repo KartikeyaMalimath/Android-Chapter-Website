@@ -9,14 +9,16 @@
 
 include ('db/database.php');
 
-session_start();
-    if(!isset($_SESSION['usn'])) {
-    header("Location:index.html");
-} 
-
-$uname = $_SESSION['usn'];
-$team = $_SESSION['team'];
-$name = $_SESSION['name'];
+//session_start();
+  //  if(!isset($_SESSION['usn'])) {
+    //header("Location:index.html");
+//} 
+$uname = '4vv16cs046';
+$team = 5;
+$name = 'kartikeya';
+//$uname = $_SESSION['usn'];
+//$team = $_SESSION['team'];
+//$name = $_SESSION['name'];
 ?>
 
 <head>
@@ -97,18 +99,23 @@ input[type=submit]:hover {
                     <div class="panel-body">
                     
                         <?php
-                        $sql1 = "SELECT * from assign where team = '$team'";
+                        $sql1 = "SELECT * from scrumboard where team = '$team' and workstatus = 1";
                         $result1 = $con->query($sql1);
                         if (!$result1) {
                             trigger_error('Invalid query: '.$con->error);
                         }
                         while($row =$result1->fetch_assoc()) {
-                            $assigned = $row['id'];
+                            $primid1 = $row['id'];
                             echo "<div class='card'>
                                     <div class='cont'>
+                                        <p>".$primid1."</p>
                                         <h4><b>{$row['name']}</b></h4> 
-                                        <p>{$row['assigned']}</p>
-                                        <p><button style='color:black' id='".$assigned."' onclick='learn1(this.id)'>Learn</button><button style='color:black' id='".$assigned."' onclick='develop1(this.id)'>Develop</button><button style='color:black' id='".$assigned."' onclick='complete1(this.id)'>Done</button><button style='color:black' id='".$assigned."' onClick='delete1(this.id)'>Delete</button></p>
+                                        <p>{$row['data']}</p>
+                                        <p><button style='color:black' id='".$primid1."' onclick='
+                                        '>Learn</button>
+                                        <button style='color:black' id='".$primid1."' onclick='develop(this.id)'>Develop</button>
+                                        <button style='color:black' id='".$primid1."' onclick='complete(this.id)'>Done</button>
+                                        <button style='color:black' id='".$primid1."' onClick='delete(this.id)'>Delete</button></p>
                                     </div>
                                 </div> <br/>";
 
@@ -150,18 +157,21 @@ input[type=submit]:hover {
                     <div class="panel-body">
 
                         <?php
-                        $sql2 = "SELECT * from learn where team = '$team'";
+                        $sql2 = "SELECT * from scrumboard where team = '$team'And workstatus = 2";
                         $result2 = $con->query($sql2);
                         if (!$result2) {
                             trigger_error('Invalid query: '.$con->error);
                         }
                         while($row =$result2->fetch_assoc()) {
-                            $learn = $row['id'];
+                            $primid2 = $row['id'];
                             echo "<div class='card'>
                                     <div class='cont'>
                                         <h4><b>{$row['name']}</b></h4> 
-                                        <p>{$row['learning']}</p>
-                                        <p><button style='color:black' id='".$learn."' onclick='assign2(this.id)'>Assign</button><button style='color:black' id='".$learn."' onclick='develop2(this.id)'>Develop</button><button style='color:black' id='".$learn."' onclick='complete2(this.id)'>Done</button><button style='color:black' id='".$learn."' onClick='delete2(this.id)'>Delete</button></p>
+                                        <p>{$row['data']}</p>
+                                        <p><button style='color:black' id='".$primid2."' onclick='assign(this.id)'>Assign</button>
+                                        <button style='color:black' id='".$primid2."' onclick='develop(this.id)'>Develop</button>
+                                        <button style='color:black' id='".$primid2."' onclick='complete(this.id)'>Done</button>
+                                        <button style='color:black' id='".$primid2."' onClick='delete(this.id)'>Delete</button></p>
                                     </div>
                                 </div> <br/>";
 
@@ -178,18 +188,21 @@ input[type=submit]:hover {
                     <div class="panel-body">
 
                         <?php
-                        $sql3 = "SELECT * from develop where team = '$team'";
+                        $sql3 = "SELECT * from scrumboard where team = '$team'And workstatus = 3";
                         $result3 = $con->query($sql3);
                         if (!$result3) {
                             trigger_error('Invalid query: '.$con->error);
                         }
                         while($row =$result3->fetch_assoc()) {
-                            $develop = $row['id'];
+                            $primid3 = $row['id'];
                             echo "<div class='card'>
                                     <div class='cont'>
                                         <h4><b>{$row['name']}</b></h4> 
-                                        <p>{$row['developing']}</p>
-                                        <p><button style='color:black' id='".$develop."' onclick='assign3(this.id)'>Assign</button><button style='color:black' id='".$develop."' onclick='learn3(this.id)'>Learn</button><button style='color:black' id='".$develop."' onclick='complete3(this.id)'>Done</button><button style='color:black' id='".$develop."' onClick='delete3(this.id)'>Delete</button></p>
+                                        <p>{$row['data']}</p>
+                                        <p><button style='color:black' id='".$primid3."' onclick='assign(this.id)'>Assign</button>
+                                        <button style='color:black' id='".$primid3."' onclick='learn(this.id)'>Learn</button>
+                                        <button style='color:black' id='".$primid3."' onclick='complete(this.id)'>Done</button>
+                                        <button style='color:black' id='".$primid3."' onClick='delete(this.id)'>Delete</button></p>
                                     </div>
                                 </div> <br/>";
 
@@ -206,18 +219,21 @@ input[type=submit]:hover {
                     <div class="panel-body">
                     
                     <?php
-                        $sql4 = "SELECT * from complete where team = '$team'";
+                        $sql4 = "SELECT * from scrumboard where team = '$team' And workstatus = 4";
                         $result4 = $con->query($sql4);
                         if (!$result4) {
                             trigger_error('Invalid query: '.$con->error);
                         }
                         while($row =$result4->fetch_assoc()) {
-                            $complete = $row['id'];
+                            $primid4 = $row['id'];
                             echo "<div class='card'>
                                     <div class='cont'>
                                         <h4><b>{$row['name']}</b></h4> 
-                                        <p>{$row['completed']}</p>
-                                        <p><button style='color:black' id='".$complete."' onclick='assign4(this.id)'>Assign</button><button style='color:black' id='".$complete."' onclick='learn4(this.id)'>Learn</button><button style='color:black' id='".$complete."' onclick='develop4(this.id)'>Develop</button><button style='color:black' id='".$complete."' onClick='delete4(this.id)'>Delete</button></p>
+                                        <p>{$row['data']}</p>
+                                        <p><button style='color:black' id='".$primid4."' onclick='assign(this.id)'>Assign</button>
+                                        <button style='color:black' id='".$primid4."' onclick='learn(this.id)'>Learn</button>
+                                        <button style='color:black' id='".$primid4."' onclick='develop(this.id)'>Develop</button>
+                                        <button style='color:black' id='".$primid4."' onClick='delete(this.id)'>Delete</button></p>
                                     </div>
                                 </div> <br/>";
 
@@ -270,11 +286,11 @@ input[type=submit]:hover {
 
 <!--script for cards-->
 <script type="text/javascript">
-    function delete1(clicked_id){
+    function delete(clicked_id){
         if (window.confirm('Do you want to delete this card?'))
         {
             alert('Card Deleting');
-            window.location = ("function/delete1.php?id="+clicked_id);
+            window.location = ("testfn/delete.php?id="+clicked_id);
         }
         else
         {
@@ -282,81 +298,31 @@ input[type=submit]:hover {
         }
     }
 
-    function delete2(clicked_id){
-        if (window.confirm('Do you want to delete this card?'))
-        {
-            alert('Card Deleting');
-            window.location = ("function/delete2.php?id="+clicked_id);
-        }
-        else
-        {
-            die();
-        }
+  //learn function  
+
+function learn(clicked_id) {
+			window.location.href = ("testfn/learn.php?id="+clicked_id);		
     }
 
-    function delete3(clicked_id){
-        if (window.confirm('Do you want to delete this card?'))
-        {
-            alert('Card Deleting');
-            window.location = ("function/delete3.php?id="+clicked_id);
-        }
-        else
-        {
-            die();
-        }
+//assign function
+
+function assign(clicked_id) {
+			window.location.href = ("testfn/assign.php?id="+clicked_id);		
     }
 
-    function delete4(clicked_id){
-        if (window.confirm('Do you want to delete this card?'))
-        {
-            alert('Card Deleting');
-            window.location = ("function/delete4.php?id="+clicked_id);
-        }
-        else
-        {
-            die();
-        }
+//develop function
+
+function develop(clicked_id) {
+			window.location.href = ("testfn/develop.php?id="+clicked_id);		
     }
 
-function learn1(clicked_id) {
-			window.location.href = ("function/learn1.php?id="+clicked_id);		
-    }
 
-function learn3(clicked_id) {
-			window.location.href = ("function/learn3.php?id="+clicked_id);		
-    }
+//complete function
 
-function learn4(clicked_id) {
-			window.location.href = ("function/learn4.php?id="+clicked_id);		
-    }
+function complete(clicked_id) {
+			window.location.href = ("testfn/complete.php?id="+clicked_id);		
+    }	
 
-function assign2(clicked_id) {
-			window.location.href = ("function/assign2.php?id="+clicked_id);		
-    }
-function assign3(clicked_id) {
-			window.location.href = ("function/assign3.php?id="+clicked_id);		
-    }
-function assign4(clicked_id) {
-			window.location.href = ("function/assign4.php?id="+clicked_id);		
-    }
-function develop1(clicked_id) {
-			window.location.href = ("function/develop1.php?id="+clicked_id);		
-    }
-function develop2(clicked_id) {
-			window.location.href = ("function/develop2.php?id="+clicked_id);		
-    }
-function develop4(clicked_id) {
-			window.location.href = ("function/develop4.php?id="+clicked_id);		
-    }
-function complete1(clicked_id) {
-			window.location.href = ("function/complete1.php?id="+clicked_id);		
-    }
-function complete2(clicked_id) {
-			window.location.href = ("function/complete2.php?id="+clicked_id);		
-    }
-function complete3(clicked_id) {
-			window.location.href = ("function/complete3.php?id="+clicked_id);		
-    }
     
 </script>
 
@@ -372,17 +338,18 @@ if(isset($_POST['submit']))
  {
  	$name = $_POST['student'];
    $assign = $_POST['details'];
+   $workstatus = 1;
 
     $usn = mysqli_query($con,"select usn from login where uname = '$name'");
     $usnres = mysqli_fetch_array($usn);
 
- 	$sqql = "INSERT INTO assign (uname,name,team,assigned) VALUES (?,?,?,?)";
+ 	$sqql = "INSERT INTO scrumboard (uname,name,team,workstatus, data) VALUES (?,?,?,?,?)";
  	$stmt = $con->prepare($sqql);
- 	$stmt->bind_param('ssds',$usnres['usn'],$name,$team,$assign);
+ 	$stmt->bind_param('ssdds',$usnres['usn'],$name,$team,$workstatus,$assign);
 
 
  	if ($stmt->execute()) {
- 	$link = "<script>window.location.replace(\"student.php\")</script>";
+ 	$link = "<script>window.location.replace(\"studenttest.php\")</script>";
     echo "new card added";
     echo $link;
  	exit();
