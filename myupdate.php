@@ -97,7 +97,7 @@ input[type=submit]:hover {
                     <div class="panel-body">
                     
                         <?php
-                        $sql1 = "SELECT * from course where uname = '$uname'";
+                        $sql1 = "SELECT * from course where team = '$team'";
                         $result1 = $con->query($sql1);
                         if (!$result1) {
                             trigger_error('Invalid query: '.$con->error);
