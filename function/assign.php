@@ -1,5 +1,7 @@
 <?php
 
+include ('../db/database.php');
+
 $id = $_GET['id'];
 
 $update = "UPDATE scrumboard SET workstatus = 1 WHERE id = $id";
@@ -8,9 +10,10 @@ if (!$result1) {
      trigger_error('Invalid query: '.$con->error);
 }
 
-while($row =$result1->fetch_assoc()) {
+if($result1 === TRUE) {
     echo "record updated";
-    header('Location: ../studenttest.php');
+    header('Location: ../student.php');
+    
 }
 
 ?>

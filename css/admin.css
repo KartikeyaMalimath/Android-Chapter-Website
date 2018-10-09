@@ -84,3 +84,20 @@ input {
 h5 {
     color: white;
 }
+
+.footer {
+    vertical-align: bottom;
+    position: relative;
+    margin-left: 50px;
+    display: block;
+    box-size: border-box;
+    -webkit-box-size: border-box;
+    padding: 40px 40px;
+    color: #555;
+    text-align: center;
+    background: #f5f5f5;
+  }
+  
+  .footer p {
+    opacity: .65;
+  }

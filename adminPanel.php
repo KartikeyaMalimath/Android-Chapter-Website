@@ -157,6 +157,11 @@
 
     </div>
 
+    <div class="footer">
+   <copyright class="copy fade-in">&copy; 2018 developed by <a href="http://www.linkedin.com/in/kartikeya-malimath-b18441159">Kartikeya</a><a href="https://github.com/KartikeyaMalimath"> Malimath</a>. In association with DEV HUB | VVCE, Mysuru</copyright>
+   
+    </div>
+
 <script type="text/javascript">
     function deluser(clicked_id) {
         if (window.confirm('Do you want to delete this User?'))
