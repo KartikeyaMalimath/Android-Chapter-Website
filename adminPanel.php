@@ -31,8 +31,8 @@
 <body>
 
     <div class="sidenav">
-        <a href="#"><span class="glyphicon glyphicon-home"></span></a>
-        <a href="#"><span class="glyphicon glyphicon-user"></span></a>
+        <a href="adminPanel.php"><span class="glyphicon glyphicon-home"></span></a>
+        <a href="adminStudent.php?view=0"><span class="glyphicon glyphicon-user"></span></a>
         <a href="function/logout.php"><span class="glyphicon glyphicon-arrow-left"></span></a>
         <a href="#"><span class="glyphicon glyphicon-briefcase"></span></a>
     </div>

@@ -71,7 +71,7 @@ input[type=submit]:hover {
             <div class="sidenav">
                     <a href="student.php"><span class="glyphicon glyphicon-home"></span></a>
                     <a href="myupdate.php"><span class="glyphicon glyphicon-briefcase"></span></a>
-                    <a href="#"><span class="glyphicon glyphicon-user"></span></a>
+                    <a href="studentprofile.php"><span class="glyphicon glyphicon-user"></span></a>
                     <a href="function/logout.php"><span class="glyphicon glyphicon-arrow-left"></span></a>
                 </div>
         <!--navbar-->

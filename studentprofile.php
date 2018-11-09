@@ -63,6 +63,11 @@ input[type=submit]:hover {
     background-color: #555555;
     color: white;
 }
+
+.student {
+    padding: 30px;
+    background: rgb(43, 43, 46);
+}
 </style>
 
 <body>
@@ -70,7 +75,7 @@ input[type=submit]:hover {
             <div class="sidenav">
                     <a href="student.php"><span class="glyphicon glyphicon-home"></span></a>
                     <a href="myupdate.php"><span class="glyphicon glyphicon-briefcase"></span></a>
-                    <a href="#"><span class="glyphicon glyphicon-user"></span></a>
+                    <a href="studentprofile.php"><span class="glyphicon glyphicon-user"></span></a>
                     <a href="function/logout.php"><span class="glyphicon glyphicon-arrow-left"></span></a>
             </div>
         <!--navbar-->
@@ -82,13 +87,42 @@ input[type=submit]:hover {
 
         <div class="container">
        <!--body of the page code should come here-->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="student">
+                        <center><h4>Scores</h4></center>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="student">
+                        <center><h4>Events Attended</h4></center>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="student">
+                            <center><h4>Reset Password</h4></center>
+                            <form method = "POST" action="function/reset.php">
+                                </br>
+                                <label for="usn"><p>USN</p></label>
+                                <input style="width:100%" type="text" id="usn" name="usn" placeholder="USN.." required>
 
+                                <label for="Opassword"><p>Old Password</p></label>
+                                <input style="width:100%; color: black;" type="password" id="Opassword" name="Opassword" placeholder="Old password..." required>
 
+                                <label for="password"><p>Password</p></label>
+                                <input style="width:100%; color: black;" type="password" id="password" name="password" placeholder="password..." required>
 
-
-
-
-
+                                <input type="submit" name="submit" value="Sign-Up" style="width:100%; margin-top: 30px; margin-bottom:0px;" >
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </section>
